@@ -33,3 +33,5 @@ CREATE TABLE IF NOT EXISTS review(
 );
 
 INSERT INTO review(rev_dis, stars, place_id ) VALUES;
+
+COMMIT;
