@@ -27,22 +27,15 @@ const handlerPlace = (request, response, url) => {
 };
 
 const handlerCity = (request, response) => {
-  let city_url = request.url;
-  getData((err, res) => {
-    if (err) {
-      response.writeHead(500, "Content-Type:text/html");
-      response.end("<h1>Sorry, there was a problem getting the users</h1>");
-      console.log(err);
+  fs.readFile(__dirname + "/../public/searchSite.html", (error, file) => {
+    if (error) {
+      response.writeHead(500, { "Content-type": "text/plain" });
+      response.end("Sorry, this site can't be reached");
     } else {
-      let output = JSON.stringify(res);
-      response.writeHead(200, {
-        "content-type": "application/json"
-      });
-      response.end(output);
-
+      response.writeHead(200, { "Content-type": "text/html" });
+      response.end(file);
     }
   });
-  handlerPlace(request, response, url);
 };
 const handlerPublic = (request, response) => {
   let url = request.url;
@@ -70,9 +63,7 @@ const handlerPublic = (request, response) => {
 };
 const handler404 = res => {
   fs.readFile(
-
     path.join(__dirname, "/../public/home.html"),
-
 
     err => {
       if (err) {

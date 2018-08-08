@@ -1,6 +1,6 @@
 const http = require("http");
 const handlers = require("./handlers.js");
-const getData = require("./queries");
+const getData = require("./queries/getData");
 let city = "nazareth";
 const router = (request, response) => {
   const endpoint = request.url;
@@ -11,7 +11,8 @@ const router = (request, response) => {
       "/style.css",
       "/index.html",
       "/searchSite.html",
-      "/home.html"
+      "/home.html",
+      "/xhr.js"
     ].includes(endpoint)
   ) {
     handlers.handlerPublic(request, response);
@@ -26,7 +27,29 @@ const router = (request, response) => {
     city = endpoint.slice(1);
     handlers.handlerCity(request, response);
   } else if (endpoint === "/get_places") {
-    //  getData(city,())
+    console.log("city", city);
+    id = {
+      Haifa: 1,
+      Jerusalem: 2,
+      Nazareth: 3,
+      Akko: 4
+    }[city];
+    console.log(id);
+    getData(id, (error, rows) => {
+      if (error) {
+        console.log(error);
+        response.writeHead(200, "Content-Type:application/json");
+        response.end(JSON.stringify({ error: "sorry, something went wrong" }));
+      } else {
+        response.writeHead(200, "Content-Type:application/json");
+        response.end(
+          JSON.stringify({
+            reviews: rows,
+            city
+          })
+        );
+      }
+    });
   } else {
     handlers.handler404(response);
   }
