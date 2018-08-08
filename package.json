@@ -2,12 +2,13 @@
   "name": "week6_suhagroup",
   "version": "1.0.0",
   "description": "suha Noor Tawfik Project",
-  "main": "index.js",
+  "main": "src/server.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
