@@ -14,12 +14,14 @@ const router = (request, response) => {
   ) {
     handlers.handlerPublic(request, response);
   } else if (
-    endpoint === "Nazareth" ||
-    "Ramallah" ||
-    "Bethlehem" ||
-    "Jerusalem" ||
-    "Acre" ||
-    "Haifa"
+    [
+      "/Nazareth",
+      "/Ramallah",
+      "/Haifa",
+      "/Bethlehem",
+      "/Jerusalem",
+      "/Acre"
+    ].includes(endpoint)
   ) {
     handlers.handlerCity(request, response);
   } else {

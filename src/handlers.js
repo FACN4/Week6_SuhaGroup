@@ -10,9 +10,24 @@ const handler500 = res => {
   res.writeHead(500, { "content-type": "text/plain" });
   res.end("server error");
 };
+const handlerPlace = (request, response, url) => {
+  if (url === "/Nazareth") {
+    getData();
+  }
+  if (url === "/Ramallah") {
+  }
+  if (url === "/Bethlehem") {
+  }
+  if (url === "/Haifa") {
+  }
+  if (url === "/Acre") {
+  }
+  if (url === "/Jerusalem") {
+  }
+};
+
 const handlerCity = (request, response) => {
-  let url = request.url;
-  console.log(url);
+  let city_url = request.url;
   getData((err, res) => {
     if (err) {
       response.writeHead(500, "Content-Type:text/html");
@@ -26,6 +41,7 @@ const handlerCity = (request, response) => {
       response.end(output);
     }
   });
+  handlerPlace(request, response, url);
 };
 const handlerPublic = (request, response) => {
   let url = request.url;
