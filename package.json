@@ -26,5 +26,8 @@
     "nodemon": "^1.18.3",
     "request": "^2.87.0"
   },
-  "homepage": "https://github.com/FACN4/Week6_SuhaGroup#readme"
+  "homepage": "https://github.com/FACN4/Week6_SuhaGroup#readme",
+  "dependencies": {
+    "pg": "^7.4.3"
+  }
 }

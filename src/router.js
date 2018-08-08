@@ -5,10 +5,12 @@ const queryString = require("querystring");
 
 const router = (request, response) => {
   const endpoint = request.url.split("/")[1];
-  if (endpoint === "") {
-    handlers.handlerHome(response);
+  if (endpoint === "/") {
+    handlers.handlerHome(request, response);
   } else if (endpoint === "reviews") {
-    handlers.reviewer(response);
+    handlers.reviewer(request, response);
+  } else {
+    handlers.handler404(response);
   }
 };
 module.exports = router;
