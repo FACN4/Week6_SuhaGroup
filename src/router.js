@@ -1,14 +1,17 @@
 const http = require("http");
-const pg = require("pg");
 const handlers = require("./handlers.js");
-const queryString = require("querystring");
-
 const router = (request, response) => {
-  const endpoint = request.url.split("/")[1];
-  if (endpoint === "") {
-    handlers.handlerHome(response);
-  } else if (endpoint === "reviews") {
-    handlers.reviewer(response);
+  const endpoint = request.url;
+  if (
+    endpoint === "/" ||
+    ["/DOM.js", "/style.css", "/index.html"].includes(endpoint)
+  ) {
+    console.log(endpoint);
+    handlers.handlerPublic(request, response);
+  } else if (endpoint === "review") {
+    handlers.handlerCity(request, response);
+  } else {
+    handlers.handler404(response);
   }
 };
 module.exports = router;
