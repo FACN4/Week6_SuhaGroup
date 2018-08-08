@@ -1,5 +1,7 @@
-const http = require("http");
-const handlers = require("./handlers.js");
+const http = require("http")
+const handlers = require("./handlers.js")
+const getData=require("./queries")
+let city = "nazareth";
 const router = (request, response) => {
   const endpoint = request.url;
   if (
@@ -14,17 +16,21 @@ const router = (request, response) => {
     ].includes(endpoint)
 
   ) {
-    console.log(endpoint);
+
     handlers.handlerPublic(request, response);
   } else if (
-    endpoint === "Nazareth" ||
-    "Ramallah" ||
-    "Bethlehem" ||
-    "Jerusalem" ||
-    "Acre" ||
-    "Haifa"
+    endpoint === "/Nazareth" ||
+    endpoint ===  "/Ramallah" ||
+    endpoint ===  "/Bethlehem" ||
+  endpoint ===    "/Jerusalem" ||
+    endpoint ===  "/Acre" ||
+  endpoint ===    "/Haifa"
   ) {
+
+    city=endpoint.slice(1);
     handlers.handlerCity(request, response);
+  }else if(endpoint==="/get_places"){
+  //  getData(city,())
   } else {
     handlers.handler404(response);
   }
