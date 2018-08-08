@@ -2,8 +2,8 @@ const dbConnection = require("../database/db_connection.js");
 
 const postData = (text, id_place, stars, cb) => {
   dbConnection.query(
-    "INSERT INTO reviews (text, id_place, stars) VALUES ($1, $2, $3)",
-    [text, id_place, stars],
+    "INSERT INTO review (rev_dis, place_id, stars) VALUES ($1, $2, $3)",
+    [rev_dis, place_id, stars],
     (err, res) => {
       if (err) {
         return cb(err);

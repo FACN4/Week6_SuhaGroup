@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/FACN4/Week6_SuhaGroup#readme",
   "dependencies": {
+    "env2": "^2.2.2",
     "pg": "^7.4.3"
   }
 }
