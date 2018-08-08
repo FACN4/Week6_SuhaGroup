@@ -11,6 +11,8 @@ const handler500 = res => {
   res.end("server error");
 };
 const handlerCity = (request, response) => {
+  let url = request.url;
+  console.log(url);
   getData((err, res) => {
     if (err) {
       response.writeHead(500, "Content-Type:text/html");
@@ -27,6 +29,7 @@ const handlerCity = (request, response) => {
 };
 const handlerPublic = (request, response) => {
   let url = request.url;
+  console.log("url=", url);
   if (url === "/") url = "/home.html";
   let extension = url.split(".")[1];
   let extensionType = {

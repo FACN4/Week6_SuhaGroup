@@ -9,11 +9,18 @@ const router = (request, response) => {
       "/style.css",
       "/index.html",
       "/searchSite.html",
-      "home.html"
+      "/home.html"
     ].includes(endpoint)
   ) {
     handlers.handlerPublic(request, response);
-  } else if (endpoint === "review") {
+  } else if (
+    endpoint === "Nazareth" ||
+    "Ramallah" ||
+    "Bethlehem" ||
+    "Jerusalem" ||
+    "Acre" ||
+    "Haifa"
+  ) {
     handlers.handlerCity(request, response);
   } else {
     handlers.handler404(response);
