@@ -1,7 +1,7 @@
 const dbConnection = require("../database/db_connection.js");
 
 const getData = cb => {
-  dbConnection.query(`SELECT * FROM reviews`, (err, res) => {
+  dbConnection.query(`SELECT * FROM review`, (err, res) => {
     if (err) {
       cb(err);
     } else {

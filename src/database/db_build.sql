@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS cities (
   city_name  TEXT    NOT NULL
 );
 
-INSERT INTO books( city_name) VALUES
+INSERT INTO  cities( city_name) VALUES
 ('Haifa'),
 ('Jerusalem'),
 ('Nazareth'),

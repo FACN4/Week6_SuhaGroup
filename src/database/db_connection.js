@@ -12,9 +12,7 @@ const options = {
   host: params.hostname,
   port: params.port,
   database: params.pathname.split("/")[1],
-  max: process.env.DB_MAX_CONNECTIONS || 2,
-  user: username,
-  password: password
+  max: process.env.DB_MAX_CONNECTIONS || 2
 };
 
 options.ssl = options.host !== "localhost";
