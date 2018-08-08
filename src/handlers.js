@@ -39,14 +39,16 @@ const handlerCity = (request, response) => {
         "content-type": "application/json"
       });
       response.end(output);
+
     }
   });
   handlerPlace(request, response, url);
 };
 const handlerPublic = (request, response) => {
   let url = request.url;
-  console.log("url=", url);
+
   if (url === "/") url = "/home.html";
+
   let extension = url.split(".")[1];
   let extensionType = {
     html: "text/html",
@@ -54,6 +56,7 @@ const handlerPublic = (request, response) => {
     js: "application/javascript",
     json: "application/json"
   };
+
   fs.readFile(__dirname + "/.." + "/public" + url, function(error, file) {
     if (error) {
       response.writeHead(500, "Content-Type:text/html");
@@ -67,7 +70,9 @@ const handlerPublic = (request, response) => {
 };
 const handler404 = res => {
   fs.readFile(
+
     path.join(__dirname, "/../public/home.html"),
+
 
     err => {
       if (err) {

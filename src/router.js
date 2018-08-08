@@ -4,6 +4,7 @@ const router = (request, response) => {
   const endpoint = request.url;
   if (
     endpoint === "/" ||
+
     [
       "/DOM.js",
       "/style.css",
@@ -11,7 +12,9 @@ const router = (request, response) => {
       "/searchSite.html",
       "/home.html"
     ].includes(endpoint)
+
   ) {
+    console.log(endpoint);
     handlers.handlerPublic(request, response);
   } else if (
     [
