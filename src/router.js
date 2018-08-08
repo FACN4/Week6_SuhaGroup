@@ -4,7 +4,8 @@ const router = (request, response) => {
   const endpoint = request.url;
   if (
     endpoint === "/" ||
-    ["/DOM.js", "/style.css", "/index.html"].includes(endpoint)
+
+    ["/DOM.js", "/style.css", "/home.html"].includes(endpoint)
   ) {
     console.log(endpoint);
     handlers.handlerPublic(request, response);

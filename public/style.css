@@ -1,27 +1,25 @@
 body {
-  background-color: #FFF;
+  background-color: #fff;
   font-size: 4.2em;
   line-height: 1.5;
-  font-family: 'Karla', arial, sans-serif;
-  font-weight:400;
+  font-family: "Karla", arial, sans-serif;
+  font-weight: 400;
   text-align: center;
 }
+
 img {
   width: 500px;
   height: 330px;
 }
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+
 .grid-container {
   display: flex;
   flex-direction: column;
-
   align-self: center;
-
   align-items: center;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 .main-container {
   width: 100%;
@@ -29,7 +27,6 @@ img {
   margin-bottom: 220px;
 }
 .flex-container {
-
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -44,8 +41,6 @@ img {
   font-stretch: expanded;
 }
 
-
-
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -55,11 +50,10 @@ img {
   z-index: 1;
 }
 
-
 .navbar span {
   display: block;
-color: #f2f2f2;
-text-align: center;
-padding: 12px 12px;
-text-decoration: none;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
 }
