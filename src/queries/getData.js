@@ -1,5 +1,4 @@
 const dbConnection = require("../database/db_connection.js");
-
 const getData = (place_id,cb) => {
   dbConnection.query(`SELECT * FROM review where place_id=$1`,[place_id], (err, res) => {
 
