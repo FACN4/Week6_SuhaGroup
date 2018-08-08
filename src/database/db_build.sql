@@ -11,7 +11,7 @@ INSERT INTO  cities( city_name) VALUES
 ('Haifa'),
 ('Jerusalem'),
 ('Nazareth'),
-('akko');
+('Akko');
 
 
 CREATE TABLE IF NOT EXISTS places(
