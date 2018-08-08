@@ -25,4 +25,28 @@ Our project for this week is aimed to let any visitor to our land to find some f
  - [ ] After clicking on the city the user wants, the user has a search box which contains list of suggestions about some tourist sites.
  - [ ] The user can see what others had left reviews about this site, which we require from the database, how many stars the rating of it.
  - [ ] The user can add his own review, which will be stored in the database of our website.
+ ---
+ # Project requirements :
+ ---
+- [ ] Simple web app with a node server and a database.
+- [ ] Your database comes with a schema, which should be documented in your readme (along with any other architectural decisions).
+- [ ] Database hosted on Heroku, or locally.
+- [ ] Build script for your database.
+- [ ] Security concerns appropriately considered (you must protect against script injections!).
+- [ ] Good test coverage both server- and client-side.
+- [ ] Content dynamic, but DOM manipulation kept to a minimum.
+- [ ] Mobile-first design.
+- [ ] Clear user journey (even if you take one of our suggested ideas, document the user journey in your readme).
+- [ ] You will need to make the requests and update the DOM in response using client-side JavaScript.
+- [ ] serving static HTML and JS files.
+- [ ] server provides endpoints that return DB query results as JSON. 
+- [ ] quering server from the client using the XMLHttpRequest method.
+You'll need to be able to make both POSTand GET requests to your server.
+ ---
+ # Software architecture:
+ ---
+ ---
+ # database schema:
+ ---
+ ---
  
