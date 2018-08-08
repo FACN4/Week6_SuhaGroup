@@ -5,11 +5,25 @@ const router = (request, response) => {
   if (
     endpoint === "/" ||
 
-    ["/DOM.js", "/style.css", "/home.html"].includes(endpoint)
+    [
+      "/DOM.js",
+      "/style.css",
+      "/index.html",
+      "/searchSite.html",
+      "/home.html"
+    ].includes(endpoint)
+
   ) {
     console.log(endpoint);
     handlers.handlerPublic(request, response);
-  } else if (endpoint === "review") {
+  } else if (
+    endpoint === "Nazareth" ||
+    "Ramallah" ||
+    "Bethlehem" ||
+    "Jerusalem" ||
+    "Acre" ||
+    "Haifa"
+  ) {
     handlers.handlerCity(request, response);
   } else {
     handlers.handler404(response);
