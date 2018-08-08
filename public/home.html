@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title> Reviewers on Site </title>
+
+</head>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found.";
+          }
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      };
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+}
+</script>
+<body>
+  <section class="main-container">
+    <nav class="navbar">
+       <span id="headTitle"> Reviewers on Site </span>
+     </nav>
+  <section id='flexbox' class="flex-container">
+  <!-- each section should contain -Img on the background
+     -name of the city on it
+        -clicking on
+         him will show button for choosing site  -->
+
+  <article class="grid-containe">
+   <a href="/Nazareth">
+   <img src="https://user-images.githubusercontent.com/36166288/43825879-91e295e0-9afe-11e8-9b19-2d77c8d0180d.jpg">
+
+ </img>
+   </a>
+  </article>
+  <article class="grid-containe">
+<a href="/Haifa">
+  <img src="https://user-images.githubusercontent.com/36166288/43825964-bd4c16ac-9afe-11e8-9666-bdbe88b34407.jpg"> </img>
+</a>
+  </article>
+  <article class="grid-containe">
+<a href="/Jerusalem">
+  <img src="https://user-images.githubusercontent.com/36166288/43826356-cc83c434-9aff-11e8-8629-8e2f9fec1394.jpg"> </img>
+</a>
+  </article>
+  <article class="grid-containe">
+<a href="/Ramallah">
+  <img src="https://user-images.githubusercontent.com/36166288/43826639-7597bb7a-9b00-11e8-839f-327dae0eaf29.jpg"> </img>
+</a>
+  </article>
+  <article class="grid-containe">
+<a href="/Bethlehem">
+  <img src="https://user-images.githubusercontent.com/36166288/43826280-a696460c-9aff-11e8-87df-e76f69702412.jpeg"> </img>
+
+</a>
+  </article>
+  <article class="grid-containe">
+<a href="/Acre">
+  <img src="https://user-images.githubusercontent.com/36166288/43826529-340c2e5c-9b00-11e8-85c4-549b7b60c7ac.jpg"> </img>
+
+</a>
+  </article>
+
+</section>
+</section>
+</body>
+</html>

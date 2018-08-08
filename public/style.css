@@ -1,0 +1,59 @@
+body {
+  background-color: #fff;
+  font-size: 4.2em;
+  line-height: 1.5;
+  font-family: "Karla", arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+img {
+  width: 500px;
+  height: 330px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.main-container {
+  width: 100%;
+  margin-top: 180px;
+  margin-bottom: 220px;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-container > article {
+  background-color: #f2f2f2;
+  width: 500px;
+  height: 300px;
+  margin: 40px;
+  text-align: left;
+
+  font-stretch: expanded;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+.navbar span {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
+}

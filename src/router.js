@@ -4,9 +4,14 @@ const router = (request, response) => {
   const endpoint = request.url;
   if (
     endpoint === "/" ||
-    ["/DOM.js", "/style.css", "/index.html"].includes(endpoint)
+    [
+      "/DOM.js",
+      "/style.css",
+      "/index.html",
+      "/searchSite.html",
+      "home.html"
+    ].includes(endpoint)
   ) {
-    console.log(endpoint);
     handlers.handlerPublic(request, response);
   } else if (endpoint === "review") {
     handlers.handlerCity(request, response);
