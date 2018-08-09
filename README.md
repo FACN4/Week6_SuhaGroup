@@ -47,7 +47,5 @@ Our project for this week is aimed to let any visitor to our land to find some f
  # Software architecture:
  ---
  ---
- # database schema:
- ---
- ---
+ 
  
