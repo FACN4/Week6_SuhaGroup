@@ -1,4 +1,7 @@
-xhrCall("/get_places", function(response) {
+xhrCall("/get_places", function(error, response) {
+  if (error) {
+    throw new Error("could not find search results");
+  }
   var cotainer = document.getElementById("review");
   console.log(response);
   var result = response;
