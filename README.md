@@ -46,7 +46,6 @@ Our project for this week is aimed to let any visitor to our land to find some f
  ---
  # Software architecture:
  ---
- file:///home/noor/Downloads/Untitled%20Diagram%20(3).png
- ---
+file:///home/noor/Downloads/Untitled%20Diagram%20(3).png
  
  
