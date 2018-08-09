@@ -7,10 +7,16 @@ if (!process.env.DB_URL_URL) {
 }
 
 const params = url.parse(process.env.DB_URL_URL);
+const [username, password] = params.auth.split(":");
 
 const options = {
-  connectionString: process.env.DB_URL_URL
+  host: params.hostname,
+  port: params.port,
+  database: params.pathname.split("/")[1],
+  max: process.env.DB_MAX_CONNECTIONS || 2,
+  user: username,
+  password,
+  ssl: params.hostname !== "localhost"
 };
-
 
 module.exports = new Pool(options);
