@@ -25,7 +25,7 @@ const router = (request, response) => {
     endpoint === "/Haifa"
   ) {
     city = endpoint.slice(1);
-    handlers.handlerCity(request, response);
+    handlers.handlerCity(response);
   } else if (endpoint === "/get_places") {
     console.log("city", city);
     id = {
