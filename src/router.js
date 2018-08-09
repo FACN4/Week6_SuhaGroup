@@ -32,7 +32,9 @@ const router = (request, response) => {
       Haifa: 1,
       Jerusalem: 2,
       Nazareth: 3,
-      Akko: 4
+      Akko: 4,
+      Bethlehem: 5,
+      Ramallah: 6
     }[city];
     console.log(id);
     getData(id, (error, rows) => {
