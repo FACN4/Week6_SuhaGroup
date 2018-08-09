@@ -46,6 +46,6 @@ Our project for this week is aimed to let any visitor to our land to find some f
  ---
  # Software architecture:
  ---
-file:///home/noor/Downloads/Untitled%20Diagram%20(3).png
+ ![untitled diagram 3](https://user-images.githubusercontent.com/33840142/43896442-78954676-9be1-11e8-8e9c-f16fa36a5e1a.png)
  
  
