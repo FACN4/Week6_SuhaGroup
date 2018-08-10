@@ -10,32 +10,20 @@ const handler500 = res => {
   res.writeHead(500, { "content-type": "text/plain" });
   res.end("server error");
 };
-const handlerPlace = (request, response, url) => {
-  if (url === "/Nazareth") {
-    getData();
-  }
-  if (url === "/Ramallah") {
-  }
-  if (url === "/Bethlehem") {
-  }
-  if (url === "/Haifa") {
-  }
-  if (url === "/Acre") {
-  }
-  if (url === "/Jerusalem") {
-  }
-};
 
-const handlerCity = (request, response) => {
-  fs.readFile(__dirname + "/../public/searchSite.html", (error, file) => {
-    if (error) {
-      response.writeHead(500, { "Content-type": "text/plain" });
-      response.end("Sorry, this site can't be reached");
-    } else {
-      response.writeHead(200, { "Content-type": "text/html" });
-      response.end(file);
+const handlerCity = response => {
+  fs.readFile(
+    path.join(__dirname + "/../public/searchSite.html"),
+    (error, file) => {
+      if (error) {
+        response.writeHead(500, { "Content-type": "text/plain" });
+        response.end("Sorry, this site can't be reached");
+      } else {
+        response.writeHead(200, { "Content-type": "text/html" });
+        response.end(file);
+      }
     }
-  });
+  );
 };
 const handlerPublic = (request, response) => {
   let url = request.url;
@@ -50,7 +38,10 @@ const handlerPublic = (request, response) => {
     json: "application/json"
   };
 
-  fs.readFile(__dirname + "/.." + "/public" + url, function(error, file) {
+  fs.readFile(path.join(__dirname + "/.." + "/public" + url), function(
+    error,
+    file
+  ) {
     if (error) {
       response.writeHead(500, "Content-Type:text/html");
       response.end("<h1>Sorry, there was a problem loading the homepage</h1>");
